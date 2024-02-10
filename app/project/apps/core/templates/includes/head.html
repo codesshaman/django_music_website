@@ -1,0 +1,31 @@
+{% load static %}
+<meta charset="utf-8">
+<title>{{ title }}</title>
+<meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="all">
+<link rel="stylesheet" href="{% static 'css/style.responsive.css' %}" media="all">
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/script.responsive.js' %}"></script>
+
+
+
+<style>
+    .art-content .art-postcontent-0 .layout-item-0 {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .ie7 .art-post .art-layout-cell {
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .ie6 .art-post .art-layout-cell {
+        border: none !important;
+        padding: 0 !important;
+    }
+</style>

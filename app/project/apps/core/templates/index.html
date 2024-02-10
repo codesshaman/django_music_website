@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+{% load static %}
+
+<head>
+    {% include 'includes/head.html' %}
+</head>
+
+<body>
+    <div id="art-main">
+        <div class="art-sheet clearfix">
+            {% include 'includes/header.html' %}
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-sidebar1">
+                            {% include 'includes/reference.html' %}
+                        </div>
+                        <div class="art-layout-cell art-content">
+                            <article class="art-post art-article">
+                                <h2 class="art-postheader">Загруженные аудио:</h2>
+
+                                <div class="art-postcontent art-postcontent-0 clearfix">
+                                    <div class="art-content-layout">
+                                        <div class="art-content-layout-row">
+                                            <div class="art-layout-cell layout-item-0" style="width: 100%">
+                                                <br>
+                                                <p>Сегодня мы послушаем произведения великих русских и финнских классиков...</p>
+                                                <ul>
+                                                    {% for index, music_file in music_files %}
+                                                    <li class="music-item">
+                                                        <audio id="{{ index }}" src="/media/music/{{ music_file }}"></audio>
+                                                        <button class="play-button"></button>
+                                                        <span class="file-name">{{ music_file }}</span>
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="art-content-layout">
+                                        <div class="art-content-layout-row">
+                                            <div class="art-layout-cell layout-item-0" style="width: 25%">
+                                                <p><br></p>
+                                            </div>
+                                            <div class="art-layout-cell layout-item-0" style="width: 75%">
+                                                <div class="container centered-form">
+                                                    <div class="col-md-6">
+                                                        <form method="post" enctype="multipart/form-data"
+                                                            id="uploadForm">
+                                                            {% csrf_token %}
+                                                            <div class="form-group">
+                                                                <!-- <input type="file" class="form-control-file"
+                                                                    id="fileInput" name="file"> -->
+                                                                {{ form.as_p }}
+                                                            </div>
+                                                            <button type="submit"
+                                                                class="btn btn-primary">Загрузить</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="art-content-layout">
+                                        <div class="art-content-layout-row">
+                                            <div class="art-layout-cell layout-item-0" style="width: 50%">
+                                                <p><img width="270" height="267" alt="" class="art-lightbox"
+                                                        src="{{ MEDIA_URL }}/media/music.png"
+                                                        style="margin-left: 31px;"><br></p>
+                                            </div>
+                                            <div class="art-layout-cell layout-item-0" style="width: 50%">
+                                                <blockquote style="margin: 10px 0">Мои соседи слушают хорошую музыку.
+                                                    И не важно, нравится им это или нет.
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include 'includes/footer.html' %}
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const audioElements = document.querySelectorAll('audio');
+        const playButtons = document.querySelectorAll('.play-button');
+        let currentAudio = null;
+
+        playButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                const audio = audioElements[index];
+
+                if (currentAudio && currentAudio !== audio) {
+                    currentAudio.pause();
+                }
+
+                if (audio.paused) {
+                    audio.play();
+                    currentAudio = audio;
+                } else {
+                    audio.pause();
+                    currentAudio = null;
+                }
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
