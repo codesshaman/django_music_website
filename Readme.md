@@ -6,7 +6,7 @@
 
 1 Клонируем репозиторий:
 
-```https://github.com/codesshaman/django_music_website.git```
+```git clone https://github.com/codesshaman/django_music_website.git```
 
 2. Переходим в директорию задания:
 
