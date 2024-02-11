@@ -6,11 +6,11 @@
 
 1 Клонируем репозиторий:
 
-```git clone ssh://git@repos-ssh.21-school.ru:2289/students/Python_Bootcamp._Day_05.ID_877053/jleslee_student.21_school.ru/Python_Bootcamp.Day_05-1.git```
+```git clone https://github.com/codesshaman/django_music_website.git```
 
 2. Переходим в директорию задания:
 
-``cd Python_Bootcamp.Day_05-1/src/01``
+``cd django_music_website``
 
 #### 01: Docker
 
