@@ -68,3 +68,41 @@
 
 В ряде случаев для воспроизведения может потребоваться
 ещё одна перезагрузка страницы.
+
+### Для тех, кому не повезло
+
+Если вы айтишник, но по какому-то недоразумению
+
+вынуждены запускать проект на windows, примите
+
+мои соболезнования и не отчайвайтесь! Выход есть.
+
+Следующие команды позволят запустить конфигурацию 
+
+под системой мелкомягких:
+
+#### Клонирование:
+
+```git clone ssh://git@repos-ssh.21-school.ru:2289/students/Python_Bootcamp._Day_05.ID_877053/jleslee_student.21_school.ru/Python_Bootcamp.Day_05-1.git```
+
+``cd Python_Bootcamp.Day_05-1/src/01``
+
+#### Docker под wsl:
+
+``docker-compose up -d --build``
+
+#### Запуск через python:
+
+``cd app/project/``
+
+``python -m venv .venv``
+
+``.\.venv\Scripts\activate``
+
+``pip install -r ../requirements.txt``
+
+``python.exe .\manage.py runserver 8888``
+
+Дальше сайт можно открыть в браузере:
+
+``http://127.0.0.1:8888/``
