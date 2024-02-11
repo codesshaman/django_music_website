@@ -1,16 +1,16 @@
-## Проект Python Bootcamp Day 05
-
+# Проект Python Bootcamp Day 05
+## Задание 1. Веб-интерфейс
 ### Способы запуска
 
 #### 00: Скачивание
 
 1 Клонируем репозиторий:
 
-```git clone https://github.com/codesshaman/django_music_website.git```
+```git clone ssh://git@repos-ssh.21-school.ru:2289/students/Python_Bootcamp._Day_05.ID_877053/jleslee_student.21_school.ru/Python_Bootcamp.Day_05-1.git```
 
 2. Переходим в директорию задания:
 
-``cd django_music_website``
+``cd Python_Bootcamp.Day_05-1/src/01``
 
 #### 01: Docker
 
@@ -47,3 +47,24 @@
 5. Переходим в браузере на сайт:
 
 `` http://127.0.0.1:8888/``
+
+## Задание 2. API-интерфейс
+
+Скрипт для тестирования API:
+
+``screwdriver.py``
+
+Не требует сторонних библиотек, работает на чистом python.
+
+Вывести список всех имеющихся композиций:
+
+``python3 screwdriver.py list``
+
+Загрузить файл на сервер:
+
+``python3 screwdriver.py upload 'File Name.mp3'``
+
+После перезагрузки сайта файл появляется на странице.
+
+В ряде случаев для воспроизведения может потребоваться
+ещё одна перезагрузка страницы.

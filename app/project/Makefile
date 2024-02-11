@@ -52,7 +52,6 @@ help:
 	@echo -e "$(WARN_COLOR)- make root				: Create superuser"
 	@echo -e "$(WARN_COLOR)- make static				: Collect static"
 	@echo -e "$(WARN_COLOR)- make venv				: Create virtual environment"
-	@echo -e "$(WARN_COLOR)- make vexit				: Exit from virtual environment"
 	@echo -e "$(WARN_COLOR)- make clean				: Remove python cache"
 	@echo -e "$(WARN_COLOR)- make fclean				: Remove venv configuration$(NO_COLOR)"
 
@@ -107,14 +106,6 @@ venv:
         echo "Creating virtual environment..."; \
         python3 -m venv ${VENV}; \
     fi
-	@echo -e "$(OK_COLOR)Environment successfully created$(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)For activate use command:$(NO_COLOR)"
-	@echo -e "$(OK_COLOR)source ../venv/bin/activate$(NO_COLOR)"
-
-vexit:
-	@echo -e "$(WARN_COLOR)For deactivate environment $(NO_COLOR)"
-	@echo -e "$(WARN_COLOR)use command:$(NO_COLOR)"
-	@echo -e "$(OK_COLOR)deactivate$(NO_COLOR)"
 
 clean:
 	@printf "$(ERROR_COLOR)==== Cleaning cache ${name}... ====$(NO_COLOR)\n"
