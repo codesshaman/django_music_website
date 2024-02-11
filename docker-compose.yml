@@ -11,8 +11,8 @@ services:
     volumes:
       - ./app/project:/app
     container_name: django
-    networks:
-      - network
+#    networks:
+#      - network
 
 #   nginx:
 #     image: 'nginx:1.23.3-alpine'
